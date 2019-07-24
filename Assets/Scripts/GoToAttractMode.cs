@@ -6,8 +6,7 @@ public class GoToAttractMode : MonoBehaviour {
     public Text timeText;
     public Text secondsText;
     public string attractModeSceneName;
-
-    private const int WAIT_TIME = 15;
+    public int waitTime;
     private float lastInteractionTime;
     private float lastTextChangeTime;
     private void Start()
@@ -23,7 +22,7 @@ public class GoToAttractMode : MonoBehaviour {
             lastInteractionTime = Time.time;
             UpdateUIText();
         }
-        if(Time.time - lastInteractionTime > WAIT_TIME)
+        if(Time.time - lastInteractionTime > waitTime)
         {
             SceneManager.LoadScene(attractModeSceneName);
         }
@@ -39,7 +38,7 @@ public class GoToAttractMode : MonoBehaviour {
 
     private void UpdateUIText()
     {
-        int secondsLeft = WAIT_TIME - Mathf.RoundToInt(Time.time - lastInteractionTime);
+        int secondsLeft = waitTime - Mathf.RoundToInt(Time.time - lastInteractionTime);
         timeText.text = secondsLeft.ToString();
         secondsText.text = secondsLeft == 1 ? "Second" : "Seconds";
     }
