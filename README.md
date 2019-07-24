@@ -2,6 +2,8 @@
  A demo showing how to display an "Attract Mode" video demo when no one has interacted with the main menu for some time.
 
  Made using Unity 2017.1.5, but it should update to any newer version of Unity without issue. So please open the project with whatever version of Unity you are currently using assuming it is newer than 2017.1.5. 
+ If you see errors relating to "TextMeshPro" remove TextMeshPro by going to Window/PackageManager, locating TextMeshPro, and clicking "Remove". It is installed by default in newer versions of Unity but it is not needed for this project.
+ If you encounter this error and don't see Window/PackageManager try restarting Unity.
 
  To start open the MainMenu scene in the "Scenes" folder.
 
